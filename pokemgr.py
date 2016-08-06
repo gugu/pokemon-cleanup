@@ -18,7 +18,7 @@ def index():
     </form>
     """
 
-@app.route('/cleanup')
+@app.route('/cleanup', methods=['POST'])
 def cleanup():
     api = pgoapi.PGoApi()
     api.set_position(40.7127837, -74.005941, 0.0)
