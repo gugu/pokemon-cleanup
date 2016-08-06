@@ -11,7 +11,7 @@ def index():
 @app.route('/cleanup', methods=['POST'])
 def cleanup():
     api = pgoapi.PGoApi()
-    api.set_position(40.7127837, -74.005941, 0.0)
+    api.set_position(request.form['latitude'], request.form['longitude'], 0.0)
     auth_success = api.login(request.form['type'], request.form['username'], request.form['password'])
     if not auth_success:
         return "Auth failure"

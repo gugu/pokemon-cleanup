@@ -8,12 +8,28 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script>
+function getLocation() {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        document.getElementsByName("latitude")[0].value = position.coords.latitude;
+        document.getElementsByName("longitude")[0].value = position.coords.longitude;
+    });
+}
+</script>
 </head>
 <body>
    <div class="container">
         <h1>Pokemon cleanup</h1>
             <a href="https://github.com/gugu/pokemon-cleanup">source code</a>
        <form method="post" action="/cleanup" class="form">
+            <div class="form-group">
+                <label>Latitude</label>
+                <input type="text" name="latitude" value="" required />
+            </div>
+            <div class="form-group">
+                <label>Longitude</label>
+                <input type="text" name="longitude" value="" required /><input type="button" value="detect location" class="btn btn-default" onClick="getLocation()" />
+            </div>
             <div class="form-group"><label>Username <input type="text" name="username" /></label></div>
             <div class="form-group"><label>Password <input type="password" name="password" /></label></div>
             <div class="form-group"><label>Account type <select name="type">
