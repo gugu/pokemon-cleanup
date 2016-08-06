@@ -1,5 +1,6 @@
 import pgoapi
 import json
+import time
 from flask import Flask, request
 app = Flask(__name__)
 
@@ -40,6 +41,7 @@ def cleanup():
             if eligible_pokemon['cp'] > request.form['cp']:
                 continue
             print("Releasing %d" % pokemon_type)
+            time.sleep(0.5)
             api.release_pokemon(pokemon_id=eligible_pokemon['id'])
     return "Done"
 
