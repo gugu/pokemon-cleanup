@@ -3,9 +3,9 @@
 Install
 =======
 
-  pip install -r requirements.txt
+    pip install -r requirements.txt
 
 Run
 ===
 
-  FLASK_APP=pokemgr.py flask run
+    FLASK_APP=pokemgr.py flask run
