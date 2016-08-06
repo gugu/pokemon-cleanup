@@ -16,6 +16,7 @@ def index():
         <div><label>Leave <input name="n" type="number" value="2" /> pokemon each type</label></div>
         <div><label>Leave pokemons with CP > <input name="cp" type="number" value="500" /></label></div>
         <input type="submit" />
+        <a href="https://github.com/gugu/pokemon-cleanup">source code</a>
     </form>
     """
 
